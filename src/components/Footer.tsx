@@ -1,68 +1,30 @@
 import Link from 'next/link'
-import { Facebook, Instagram, Mail, Phone } from 'lucide-react'
 
 export function Footer() {
   return (
-    <footer className="border-t bg-muted/50">
-      <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* About */}
-          <div>
-            <h3 className="font-bold text-lg mb-4">אודות</h3>
-            <p className="text-sm text-muted-foreground">
-              יצירות בטון ייחודיות בעבודת יד. כל מוצר הוא יצירת אומנות שנעשתה באהבה ובקפידה.
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-bold text-lg mb-4">קישורים מהירים</h3>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/" className="text-muted-foreground hover:text-primary">דף הבית</Link></li>
-              <li><Link href="/products" className="text-muted-foreground hover:text-primary">מוצרים</Link></li>
-              <li><Link href="/about" className="text-muted-foreground hover:text-primary">אודות</Link></li>
-              <li><Link href="/contact" className="text-muted-foreground hover:text-primary">צור קשר</Link></li>
-            </ul>
-          </div>
-
-          {/* Customer Service */}
-          <div>
-            <h3 className="font-bold text-lg mb-4">שירות לקוחות</h3>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/shipping" className="text-muted-foreground hover:text-primary">משלוחים</Link></li>
-              <li><Link href="/returns" className="text-muted-foreground hover:text-primary">החזרות</Link></li>
-              <li><Link href="/faq" className="text-muted-foreground hover:text-primary">שאלות נפוצות</Link></li>
-              <li><Link href="/terms" className="text-muted-foreground hover:text-primary">תנאי שימוש</Link></li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="font-bold text-lg mb-4">יצירת קשר</h3>
-            <ul className="space-y-2 text-sm">
-              <li className="flex items-center gap-2 text-muted-foreground">
-                <Phone className="h-4 w-4" />
-                <span>050-1234567</span>
-              </li>
-              <li className="flex items-center gap-2 text-muted-foreground">
-                <Mail className="h-4 w-4" />
-                <span>info@concrete-art.co.il</span>
-              </li>
-            </ul>
-            <div className="flex gap-4 mt-4">
-              <Link href="#" className="text-muted-foreground hover:text-primary">
-                <Facebook className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary">
-                <Instagram className="h-5 w-5" />
-              </Link>
+    <footer className="bg-gray-100 dark:bg-black/20">
+      <div className="mx-auto max-w-6xl px-4 py-8">
+        <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+          <div className="flex items-center gap-4 text-gray-800 dark:text-white">
+            <div className="size-5 text-primary">
+              <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+              </svg>
             </div>
+            <h2 className="text-base font-bold leading-tight">יצירות בטון</h2>
           </div>
-        </div>
-
-        <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>© 2025 יצירות בטון. כל הזכויות שמורות.</p>
-          <p className="mt-2">משלוח תוך 7 ימי עסקים לכל הארץ</p>
+          <div className="flex gap-4">
+            <Link href="/terms" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+              תנאי שימוש
+            </Link>
+            <Link href="/shipping" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+              משלוחים
+            </Link>
+            <Link href="/contact" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+              צור קשר
+            </Link>
+          </div>
+          <p className="text-sm text-gray-500 dark:text-gray-400">© 2025 יצירות בטון. כל הזכויות שמורות.</p>
         </div>
       </div>
     </footer>

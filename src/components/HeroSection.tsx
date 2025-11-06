@@ -1,39 +1,28 @@
-import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[600px] flex items-center justify-center bg-gradient-to-b from-muted/50 to-background">
-      <div className="container px-4 md:px-6">
-        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-          <div className="flex flex-col justify-center space-y-4">
-            <div className="space-y-2">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                יצירות בטון ייחודיות
-                <span className="block text-primary mt-2">לבית שלך</span>
-              </h1>
-              <p className="max-w-[600px] text-muted-foreground md:text-xl leading-relaxed">
-                מארזים מיוחדים מבטון בעבודת יד, שנעשו באהבה ובקפידה. כל יצירה מספרת סיפור ומוסיפה נופך ייחודי לבית.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Link href="/products">
-                <Button size="lg" className="w-full min-[400px]:w-auto">
-                  לקטלוג המוצרים
-                </Button>
-              </Link>
-              <Link href="#story">
-                <Button size="lg" variant="outline" className="w-full min-[400px]:w-auto">
-                  קראו את הסיפור שלי
-                </Button>
-              </Link>
-            </div>
+    <section className="@container">
+      <div className="@[480px]:p-4">
+        <div
+          className="flex min-h-[480px] flex-col items-center justify-center gap-6 rounded-xl bg-cover bg-center bg-no-repeat p-4 text-center"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://images.unsplash.com/photo-1615529328331-f8917597711f?q=80&w=2080")`
+          }}
+        >
+          <div className="flex flex-col gap-2">
+            <h1 className="text-4xl font-black leading-tight tracking-[-0.033em] text-white @[480px]:text-5xl">
+              אמנות מבטון. יצירה בעבודת יד.
+            </h1>
+            <h2 className="text-base font-normal leading-normal text-white/90 @[480px]:text-lg">
+              גלו מארזי פסלים ייחודיים לעיצוב הבית
+            </h2>
           </div>
-          <div className="flex items-center justify-center">
-            <div className="relative w-full max-w-[500px] aspect-square bg-muted rounded-lg flex items-center justify-center">
-              <p className="text-muted-foreground">תמונת Hero - יצירת בטון מרהיבה</p>
-            </div>
-          </div>
+          <Link href="/products">
+            <button className="flex h-12 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary px-5 text-base font-bold leading-normal tracking-[0.015em] text-background-dark transition-transform hover:scale-105">
+              <span className="truncate">לקטלוג המוצרים</span>
+            </button>
+          </Link>
         </div>
       </div>
     </section>

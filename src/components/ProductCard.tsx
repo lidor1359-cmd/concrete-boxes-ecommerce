@@ -1,10 +1,6 @@
 "use client"
 
 import { Product } from '@/types/product'
-import { Card, CardContent, CardFooter } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import { ShoppingCart } from 'lucide-react'
 import Link from 'next/link'
 import { useCart } from '@/contexts/CartContext'
 
@@ -19,45 +15,43 @@ export function ProductCard({ product }: ProductCardProps) {
     e.preventDefault()
     addToCart(product)
   }
-  return (
-    <Card className="overflow-hidden group hover:shadow-lg transition-shadow">
-      <Link href={`/products/${product.id}`}>
-        <div className="relative aspect-square bg-muted overflow-hidden">
-          {/* Placeholder for product image */}
-          <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-            <span>תמונת מוצר</span>
-          </div>
-          {product.featured && (
-            <Badge className="absolute top-2 left-2">מומלץ</Badge>
-          )}
-        </div>
-      </Link>
 
-      <CardContent className="p-4">
+  return (
+    <div className="flex flex-col gap-4 rounded-xl bg-white p-4 dark:bg-black/20">
+      <Link href={`/products/${product.id}`}>
+        <div
+          className="aspect-[3/4] w-full rounded-lg bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url("${product.image || 'https://images.unsplash.com/photo-1615529328331-f8917597711f?q=80&w=800'}")`
+          }}
+        />
+      </Link>
+      <div className="flex flex-col">
         <Link href={`/products/${product.id}`}>
-          <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">
+          <p className="text-lg font-medium leading-normal text-gray-900 hover:text-primary transition-colors dark:text-white">
             {product.name}
-          </h3>
+          </p>
         </Link>
-        <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
+        <p className="text-sm font-normal leading-normal text-gray-500 dark:text-gray-400 line-clamp-2">
           {product.description}
         </p>
-        <div className="flex items-center justify-between">
-          <span className="text-2xl font-bold">₪{product.price}</span>
-          <Badge variant="outline" className="text-xs">
-            {product.size === 'small' && 'קטן'}
-            {product.size === 'medium' && 'בינוני'}
-            {product.size === 'large' && 'גדול'}
-          </Badge>
-        </div>
-      </CardContent>
-
-      <CardFooter className="p-4 pt-0">
-        <Button className="w-full" size="lg" onClick={handleAddToCart}>
-          <ShoppingCart className="ml-2 h-4 w-4" />
-          הוסף לעגלה
-        </Button>
-      </CardFooter>
-    </Card>
+        <p className="mt-1 text-base font-medium leading-normal text-primary">
+          ₪{product.price}
+        </p>
+      </div>
+      <div className="mt-auto flex flex-wrap justify-center gap-3">
+        <button
+          onClick={handleAddToCart}
+          className="h-10 grow cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary px-4 text-sm font-bold leading-normal tracking-[0.015em] text-background-dark transition-transform hover:scale-105"
+        >
+          <span className="truncate">הוסף לעגלה</span>
+        </button>
+        <Link href={`/products/${product.id}`} className="h-10 grow">
+          <button className="h-full w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-gray-200 px-4 text-sm font-bold leading-normal tracking-[0.015em] text-gray-800 transition-colors hover:bg-gray-300 dark:bg-white/10 dark:text-white dark:hover:bg-white/20">
+            <span className="truncate">פרטים נוספים</span>
+          </button>
+        </Link>
+      </div>
+    </div>
   )
 }
