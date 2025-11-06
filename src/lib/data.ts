@@ -1,0 +1,103 @@
+import { Product } from '@/types/product'
+
+// Sample products data
+export const products: Product[] = [
+  {
+    id: '1',
+    name: 'מארז בטון אלגנטי - קטן',
+    description: 'מארז מעוצב בעבודת יד, מושלם למתנה ליום הולדת או לעיצוב הבית',
+    price: 149,
+    images: ['/images/product-1.jpg'],
+    category: 'מתנות',
+    size: 'small',
+    inStock: true,
+    featured: true,
+  },
+  {
+    id: '2',
+    name: 'מארז בטון מודרני - בינוני',
+    description: 'מארז ייחודי בגודל בינוני, אידיאלי לחנוכת בית',
+    price: 249,
+    images: ['/images/product-2.jpg'],
+    category: 'חנוכת בית',
+    size: 'medium',
+    inStock: true,
+    featured: true,
+  },
+  {
+    id: '3',
+    name: 'מארז בטון מפואר - גדול',
+    description: 'מארז מרהיב בגודל גדול, מושלם למתנה מיוחדת',
+    price: 399,
+    images: ['/images/product-3.jpg'],
+    category: 'מתנות מיוחדות',
+    size: 'large',
+    inStock: true,
+    featured: true,
+  },
+  {
+    id: '4',
+    name: 'מארז בטון רומנטי - קטן',
+    description: 'מארז מעוצב במיוחד, אידיאלי למתנה לאישה',
+    price: 169,
+    images: ['/images/product-4.jpg'],
+    category: 'מתנות לאישה',
+    size: 'small',
+    inStock: true,
+    featured: true,
+  },
+  {
+    id: '5',
+    name: 'מארז בטון מינימליסטי - בינוני',
+    description: 'עיצוב נקי ומודרני, מתאים לכל בית',
+    price: 229,
+    images: ['/images/product-5.jpg'],
+    category: 'עיצוב הבית',
+    size: 'medium',
+    inStock: true,
+    featured: false,
+  },
+  {
+    id: '6',
+    name: 'מארז בטון קלאסי - גדול',
+    description: 'מארז בסגנון קלאסי, מושלם לחגים',
+    price: 449,
+    images: ['/images/product-6.jpg'],
+    category: 'מתנות לחגים',
+    size: 'large',
+    inStock: true,
+    featured: false,
+  },
+]
+
+// Testimonials data
+export const testimonials = [
+  {
+    id: '1',
+    name: 'שרה כהן',
+    text: 'קיבלתי מארז לחנוכת הבית החדש שלי והוא פשוט מדהים! כל הסידור הזה עשה לי את היום. תודה על היצירתיות!',
+    rating: 5,
+    date: '2025-10-15',
+  },
+  {
+    id: '2',
+    name: 'דוד לוי',
+    text: 'הזמנתי מתנה לאישתי ליום ההולדת. היא התרגשה מאוד! האיכות מעולה והעיצוב ייחודי.',
+    rating: 5,
+    date: '2025-10-08',
+  },
+  {
+    id: '3',
+    name: 'רחל אברהם',
+    text: 'שירות מעולה, משלוח מהיר וארוז בקפידה. המוצר עצמו חורג מכל הציפיות. בהחלט אמליץ!',
+    rating: 5,
+    date: '2025-09-28',
+  },
+  {
+    id: '4',
+    name: 'יוסי מזרחי',
+    text: 'מארז מקסים שמוסיף אווירה מיוחדת לסלון שלנו. רואים שכל פרט נעשה באהבה.',
+    rating: 5,
+    date: '2025-09-20',
+  },
+]
